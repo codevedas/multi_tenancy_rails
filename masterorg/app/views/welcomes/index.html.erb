@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+!!!
+  <%= request.subdomain %>!!!
+ <br>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Path</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @welcomes.each do |welcome| %>
+      <tr>
+        <td><%= welcome.domain %></td>
+        <td><%= welcome.path %></td>
+        <td><%= link_to 'Show', welcome %></td>
+        <td><%= link_to 'Edit', edit_welcome_path(welcome) %></td>
+        <td><%= link_to 'Destroy', welcome, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_welcome_path %>
+
+
+
+
+
+
+5000.times {  |s| Welcome.find(s+2).update(path: s+1,domain: ((0...15).map { ('a'..'z').to_a[rand(26)] }.join) ) } 
+
+conn_config = ActiveRecord::Base.connection_config
+conn_config[:database] = "db/development.sqlite3"
+ActiveRecord::Base.establish_connection conn_config
+
+
+
+
+

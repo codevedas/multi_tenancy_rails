@@ -1,0 +1,3 @@
+class Welcome < ApplicationRecord
+
+end

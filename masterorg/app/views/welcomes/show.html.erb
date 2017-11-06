@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @welcome.domain %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @welcome.path %>
+</p>
+
+<%= link_to 'Edit', edit_welcome_path(@welcome) %> |
+<%= link_to 'Back', welcomes_path %>
