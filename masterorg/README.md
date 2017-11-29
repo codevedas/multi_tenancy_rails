@@ -1,24 +1,18 @@
-# README
+Web Applications Using Subdomains to Designate Tenants ie subdomain point out to the respective database.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+For a quick review
+there are two databases
+1. development.sqlite DEFAULT
+2. subdomain1.sqlite
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ the http request cases:
+ 1. www.domain.com =>  db doesn't change it will use development.sqlite 
+ 2. subdomain1.domain.com  =>  db does  change to subdomain1.sqlite 
+ 3. inpropriatesubdomain.domain.com =>  db doesn't change it will use development.sqlite 
+ 
+ 
+ 
+ checkout for code in application_controller.rb
+ 
+ long live RAILS
